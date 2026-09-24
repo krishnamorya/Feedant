@@ -17,7 +17,7 @@ export const validate = (
         try {
             const parsed = schema.parse(req[source]);
             // Replace with parsed (coerced/defaulted) values
-            (req as Record<string, unknown>)[source] = parsed;
+            Object.assign(req[source] as object, parsed);
             next();
         } catch (error) {
             if (error instanceof ZodError) {
