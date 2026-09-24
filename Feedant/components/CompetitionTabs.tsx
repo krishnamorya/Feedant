@@ -38,7 +38,7 @@ export const CompetitionTabs: React.FC<CompetitionTabsProps> = ({
   };
 
   const content = getContent();
-  const shouldTruncate = content.length > 150;
+  const shouldTruncate = content
   const displayContent = !expanded && shouldTruncate
     ? content.substring(0, 150) + '...'
     : content;

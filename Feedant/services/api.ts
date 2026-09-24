@@ -1,12 +1,7 @@
 import { Platform } from 'react-native';
 
-// For local development:
-// Android emulator uses 10.0.2.2 to point to host machine's localhost
-// iOS simulator uses localhost
-const HOST = Platform.OS === 'android' ? '10.0.2.2' : 'localhost';
-const PORT = 5000;
-
-export const SERVER_URL = `http://${HOST}:${PORT}`;
+// Use the dev tunnel URL to avoid Android's cleartext (HTTP) traffic blocking on physical devices
+export const SERVER_URL = 'https://xdltm45v-5000.inc1.devtunnels.ms';
 export const API_BASE_URL = `${SERVER_URL}/api/v1`;
 
 export const fetchHealthCheck = async () => {
